@@ -1,4 +1,7 @@
 const navigation = {
+    products: [
+      { name: '', href: '' },
+    ],
     solutions: [
       { name: 'Marketing', href: '#' },
       { name: 'Analytics', href: '#' },
