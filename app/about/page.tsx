@@ -1,63 +1,3 @@
-const timeline = [
-  {
-    name: 'Founded company',
-    description:
-      'Nihil aut nam. Dignissimos a pariatur et quos omnis. Aspernatur asperiores et dolorem dolorem optio voluptate repudiandae.',
-    date: 'Aug 2021',
-    dateTime: '2021-08',
-  },
-  {
-    name: 'Secured $65m in funding',
-    description:
-      'Provident quia ut esse. Vero vel eos repudiandae aspernatur. Cumque minima impedit sapiente a architecto nihil.',
-    date: 'Dec 2021',
-    dateTime: '2021-12',
-  },
-  {
-    name: 'Released beta',
-    description:
-      'Sunt perspiciatis incidunt. Non necessitatibus aliquid. Consequatur ut officiis earum eum quia facilis. Hic deleniti dolorem quia et.',
-    date: 'Feb 2022',
-    dateTime: '2022-02',
-  },
-  {
-    name: 'Global launch of product',
-    description:
-      'Ut ipsa sint distinctio quod itaque nam qui. Possimus aut unde id architecto voluptatem hic aut pariatur velit.',
-    date: 'Dec 2022',
-    dateTime: '2022-12',
-  },
-]
-const jobOpenings = [
-  {
-    id: 1,
-    role: 'Full-time designer',
-    href: '#',
-    description:
-      'Quos sunt ad dolore ullam qui. Enim et quisquam dicta molestias. Corrupti quo voluptatum eligendi autem labore.',
-    salary: '$75,000 USD',
-    location: 'San Francisco, CA',
-  },
-  {
-    id: 2,
-    role: 'Laravel developer',
-    href: '#',
-    description:
-      'Et veniam et officia dolorum rerum. Et voluptas consequatur magni sapiente amet voluptates dolorum. Ut porro aut eveniet.',
-    salary: '$125,000 USD',
-    location: 'San Francisco, CA',
-  },
-  {
-    id: 3,
-    role: 'React Native developer',
-    href: '#',
-    description:
-      'Veniam ipsam nisi quas architecto eos non voluptatem in nemo. Est occaecati nihil omnis delectus illum est.',
-    salary: '$105,000 USD',
-    location: 'San Francisco, CA',
-  },
-]
-
 export default function About() {
   return (
     <main className="isolate">
@@ -67,7 +7,7 @@ export default function About() {
           className="absolute inset-y-0 right-1/2 -z-10 -mr-96 w-[200%] origin-top-right skew-x-[-30deg] bg-white shadow-xl shadow-indigo-600/10 ring-1 ring-indigo-50 sm:-mr-80 lg:-mr-96"
           aria-hidden="true"
         />
-        <div className="mx-auto max-w-7xl px-6 py-32 sm:py-40 lg:px-8">
+        <div className="mx-auto max-w-screen-xl px-6 py-32 sm:py-40 lg:px-8">
           <div className="mx-auto max-w-2xl lg:mx-0 lg:grid lg:max-w-none lg:grid-cols-2 lg:gap-x-16 lg:gap-y-6 xl:grid-cols-1 xl:grid-rows-1 xl:gap-x-8">
             <h1 className="max-w-2xl text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl lg:col-span-2 xl:col-auto">
             郑州瑞斯特耐有限公司
@@ -89,7 +29,7 @@ export default function About() {
 
       {/* Content section */}
       <div className="mt-32 overflow-hidden sm:mt-40">
-        <div className="mx-auto max-w-7xl px-6 lg:flex lg:px-8">
+        <div className="mx-auto max-w-screen-xl px-6 lg:flex lg:px-8">
           <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-12 gap-y-16 lg:mx-0 lg:min-w-full lg:max-w-none lg:flex-none lg:gap-y-8">
             <div className="lg:col-end-1 lg:w-full lg:max-w-lg lg:pb-8">
               <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">公司位置</h2>
@@ -134,7 +74,7 @@ export default function About() {
         </div>
       </div>
 
-      <div className="mx-auto my-32 max-w-7xl px-6 sm:mt-40 lg:px-8 space-y-20">
+      <div className="mx-auto my-32 max-w-screen-xl px-6 sm:mt-40 lg:px-8 space-y-20">
         <div>
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
             公司历史

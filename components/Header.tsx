@@ -45,7 +45,7 @@ export default function Example() {
   return (
     <header className='relative isolate z-10 bg-white'>
       <nav
-        className='mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8'
+        className='mx-auto flex max-w-screen-xl items-center justify-between p-6 lg:px-8'
         aria-label='Global'
       >
         <div className='flex lg:flex-1'>
@@ -85,7 +85,7 @@ export default function Example() {
               leaveTo="opacity-0 translate-y-1"
             >
               <Popover.Panel focus={true} className='absolute inset-x-0 top-0 -z-10 bg-white pt-14 shadow-lg ring-1 ring-gray-900/5'>
-                <div className='mx-auto grid max-w-7xl grid-cols-4 gap-x-4 px-6 py-10 lg:px-8 xl:gap-x-8'>
+                <div className='mx-auto grid max-w-screen-xl grid-cols-4 gap-x-4 px-6 py-10 lg:px-8 xl:gap-x-8'>
                   {products.map((item) => (
                     <div
                       key={item.name}
@@ -109,7 +109,7 @@ export default function Example() {
                   ))}
                 </div>
                 <div className='bg-gray-50'>
-                  <div className='mx-auto max-w-7xl'>
+                  <div className='mx-auto max-w-screen-xl'>
                     <div className='grid grid-cols-1 divide-x divide-gray-900/5 border-x border-gray-900/5'>
                       {callsToAction.map((item) => (
                         <a

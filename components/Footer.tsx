@@ -66,21 +66,21 @@ const navigation = {
   
   export default function Footer() {
     return (
-      <footer className="bg-white" aria-labelledby="footer-heading">
+      <footer className="bg-gray-800" aria-labelledby="footer-heading">
         <h2 id="footer-heading" className="sr-only">
           Footer
         </h2>
-        <div className="mx-auto max-w-7xl px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-32">
+        <div className="mx-auto max-w-screen-xl px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-32">
           <div className="xl:grid xl:grid-cols-3 xl:gap-8">
             <div className="space-y-8">
-              <h1 className="font-bold text-xl text-gray-900">瑞斯特耐</h1>
-              <p className="text-sm leading-6 text-gray-600">
+              <h1 className="font-bold text-xl text-white">瑞斯特耐</h1>
+              <p className="text-sm leading-6 text-gray-300">
                 联系我们：xxx
               </p>
-              <p className="text-sm leading-6 text-gray-600">
+              <p className="text-sm leading-6 text-gray-300">
                 邮箱：xxx
               </p>
-              <p className="text-sm leading-6 text-gray-600">
+              <p className="text-sm leading-6 text-gray-300">
                 公司地址：xxx
               </p>
               <div className="flex space-x-6">
@@ -95,11 +95,11 @@ const navigation = {
             <div className="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
               <div className="md:grid md:grid-cols-2 md:gap-8">
                 <div>
-                  <h3 className="text-sm font-semibold leading-6 text-gray-900">耐材产品</h3>
+                  <h3 className="text-sm font-semibold leading-6 text-gray-100">耐材产品</h3>
                   <ul role="list" className="mt-6 space-y-4">
                     {navigation.products.map((item) => (
                       <li key={item.name}>
-                        <a href={item.href} className="text-sm leading-6 text-gray-600 hover:text-gray-900">
+                        <a href={item.href} className="text-sm leading-6 text-gray-300 hover:text-gray-100">
                           {item.name}
                         </a>
                       </li>
@@ -107,11 +107,11 @@ const navigation = {
                   </ul>
                 </div>
                 <div className="mt-10 md:mt-0">
-                  <h3 className="text-sm font-semibold leading-6 text-gray-900">解决方案</h3>
+                  <h3 className="text-sm font-semibold leading-6 text-gray-100">解决方案</h3>
                   <ul role="list" className="mt-6 space-y-4">
                     {navigation.solutions.map((item) => (
                       <li key={item.name}>
-                        <a href={item.href} className="text-sm leading-6 text-gray-600 hover:text-gray-900">
+                        <a href={item.href} className="text-sm leading-6 text-gray-300 hover:text-gray-100">
                           {item.name}
                         </a>
                       </li>
@@ -121,11 +121,11 @@ const navigation = {
               </div>
               <div className="md:grid md:grid-cols-2 md:gap-8">
                 <div>
-                  <h3 className="text-sm font-semibold leading-6 text-gray-900">服务支持</h3>
+                  <h3 className="text-sm font-semibold leading-6 text-gray-100">服务支持</h3>
                   <ul role="list" className="mt-6 space-y-4">
                     {navigation.support.map((item) => (
                       <li key={item.name}>
-                        <a href={item.href} className="text-sm leading-6 text-gray-600 hover:text-gray-900">
+                        <a href={item.href} className="text-sm leading-6 text-gray-300 hover:text-gray-100">
                           {item.name}
                         </a>
                       </li>
@@ -133,11 +133,11 @@ const navigation = {
                   </ul>
                 </div>
                 <div className="mt-10 md:mt-0">
-                  <h3 className="text-sm font-semibold leading-6 text-gray-900">公司</h3>
+                  <h3 className="text-sm font-semibold leading-6 text-gray-100">公司</h3>
                   <ul role="list" className="mt-6 space-y-4">
                     {navigation.company.map((item) => (
                       <li key={item.name}>
-                        <a href={item.href} className="text-sm leading-6 text-gray-600 hover:text-gray-900">
+                        <a href={item.href} className="text-sm leading-6 text-gray-300 hover:text-gray-100">
                           {item.name}
                         </a>
                       </li>
@@ -147,7 +147,7 @@ const navigation = {
               </div>
             </div>
           </div>
-          <div className="mt-16 border-t border-gray-900/10 pt-8 sm:mt-20 lg:mt-24">
+          <div className="mt-16 border-t border-gray-400/10 pt-8 sm:mt-20 lg:mt-24">
             <p className="text-xs leading-5 text-gray-500">&copy; {new Date().getFullYear()} 瑞斯特耐, Inc. All rights reserved.</p>
           </div>
         </div>
