@@ -75,13 +75,13 @@ const navigation = {
             <div className="space-y-8">
               <h1 className="font-bold text-xl text-white">瑞斯特耐</h1>
               <p className="text-sm leading-6 text-gray-300">
-                联系我们：xxx
+                联系我们：13938281286
               </p>
               <p className="text-sm leading-6 text-gray-300">
-                邮箱：xxx
+                邮箱：zzrstn@qq.com
               </p>
               <p className="text-sm leading-6 text-gray-300">
-                公司地址：xxx
+                公司地址：河南省新密市来集镇李堂村一组
               </p>
               <div className="flex space-x-6">
                 {navigation.social.map((item) => (

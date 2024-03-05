@@ -68,7 +68,7 @@ export default function Example() {
         <Popover.Group className='hidden lg:flex lg:gap-x-12'>
           <Popover>
             <Popover.Button className='flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900 outline-none'>
-              Product
+              产品中心
               <ChevronDownIcon
                 className='h-5 w-5 flex-none text-gray-400'
                 aria-hidden='true'
