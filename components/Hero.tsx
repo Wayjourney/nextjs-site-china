@@ -6,8 +6,8 @@ export default function Hero() {
       <div className='mx-auto max-w-screen-xl pb-24 pt-10 sm:pb-32 lg:grid lg:grid-cols-2 lg:gap-x-8 lg:px-8 lg:py-40'>
         <div className='px-6 lg:px-0 lg:pt-4'>
           <div className='mx-auto max-w-2xl'>
-            <div className='max-w-lg'>
-              <h1 className='mt-10 text-4xl font-bold !leading-[1.2] tracking-tight text-gray-900 sm:text-6xl'>
+            <div className='lg:max-w-lg'>
+              <h1 className='mt-10 lg:mt-0 text-4xl font-bold !leading-[1.2] tracking-tight text-gray-900 sm:text-6xl text-center lg:text-left'>
                 热工设备隔热保温首选产品
               </h1>
               <p className='mt-6 text-lg leading-8 text-gray-600'>
@@ -25,7 +25,7 @@ export default function Hero() {
             </div>
           </div>
         </div>
-        <div className='mt-20 max-w-[600px] sm:mt-24 md:mx-auto lg:mx-0 lg:mt-0'>
+        <div className='mx-auto mt-20 max-w-[600px] sm:mt-24 lg:mx-0 lg:mt-0'>
           <div
             className='absolute inset-y-0 right-1/2 -z-10 -mr-10 w-[200%] skew-x-[-30deg] bg-white shadow-xl shadow-indigo-600/10 ring-1 ring-indigo-50 md:-mr-20 lg:-mr-36'
             aria-hidden='true'

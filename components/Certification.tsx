@@ -18,11 +18,11 @@ export default function Certification() {
           </p>
         </div>
         <div className='mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none'>
-          <ul className='grid max-w-xl grid-cols-1 gap-x-20 gap-y-16 lg:max-w-none lg:grid-cols-3'>
+          <ul className='mx-auto grid max-w-xl grid-cols-1 gap-y-16 lg:max-w-none lg:grid-cols-3'>
             {features.map((feature) => (
               <li key={feature.name} className="border border-gray-100 rounded overflow-hidden">
                 <img
-                  className='w-full object-cover'
+                  className='mx-auto w-4/5 object-cover'
                   src={feature.img}
                   width="384"
                   height="542"
