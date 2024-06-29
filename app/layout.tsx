@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Inter } from "next/font/google";
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
@@ -22,6 +23,7 @@ export default function RootLayout({
         <Header />
         {children}
         <Footer />
+        <SpeedInsights />
       </body>
     </html>
   );
