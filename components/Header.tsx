@@ -51,8 +51,7 @@ export default function Example() {
         <div className='flex lg:flex-1'>
           <a href='/' className='-m-1.5 p-1.5'>
             <span className='sr-only'>瑞斯特耐</span>
-            {/* <img className="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="" /> */}
-            <h1 className='text-2xl font-bold text-gray-600'>瑞斯特耐Logo</h1>
+            <img className="h-8 w-auto" src="/img/logo.png" alt="" />
           </a>
         </div>
         <div className='flex lg:hidden'>
