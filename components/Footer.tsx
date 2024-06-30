@@ -1,4 +1,6 @@
-import { JSX, SVGProps } from "react"
+'use client';
+
+import { JSX, SVGProps, useEffect, useState } from "react"
 
 const navigation = {
     products: [
@@ -65,6 +67,16 @@ const navigation = {
   }
   
   export default function Footer() {
+    const [showICP, setShowICP] = useState(false)
+
+    useEffect(() => {
+      if (window.navigator.language.indexOf('zh') !== -1) {
+        setShowICP(true)
+      } else {
+        setShowICP(false)
+      }
+    }, [])
+
     return (
       <footer className="bg-gray-800" aria-labelledby="footer-heading">
         <h2 id="footer-heading" className="sr-only">
@@ -149,6 +161,7 @@ const navigation = {
           </div>
           <div className="mt-16 border-t border-gray-400/10 pt-8 sm:mt-20 lg:mt-24">
             <p className="text-xs leading-5 text-gray-500">&copy; {new Date().getFullYear()} 瑞斯特耐, Inc. All rights reserved.</p>
+            { showICP && <p className="py-2 text-xs leading-5 text-gray-500">豫ICP备2024073154号-1</p> }
           </div>
         </div>
       </footer>
