@@ -25,13 +25,14 @@ export default function About() {
               alt='郑州瑞斯特耐有限公司'
               width='1200'
               height='800'
+              priority
             />
           </figure>
         </div>
         <div className='absolute inset-x-0 bottom-0 -z-10 h-24 bg-gradient-to-t from-white sm:h-32' />
       </div>
 
-      <div className='pt-14 lg:pt-20 overflow-hidden bg-[#F5F5F5]'>
+      <div className='overflow-hidden bg-[#F5F5F5] pt-14 lg:pt-20'>
         <div className='mx-auto max-w-screen-xl px-6 lg:flex lg:px-8'>
           <div className='mx-auto grid grid-cols-1 gap-x-12 gap-y-16 lg:mx-0 lg:min-w-full lg:max-w-none lg:flex-none lg:gap-y-8'>
             <div className='lg:col-end-1 lg:w-full lg:max-w-lg lg:pb-8'>
@@ -51,6 +52,7 @@ export default function About() {
                   className='w-full max-w-none rounded-2xl bg-gray-50 object-cover lg:aspect-[7/5] lg:w-[37rem]'
                   width='1200'
                   height='800'
+                  loading='lazy'
                 />
               </div>
               <div className='space-y-8 lg:col-span-2 lg:col-end-2 lg:ml-auto lg:flex lg:w-[37rem] lg:items-start lg:justify-end lg:gap-x-8 lg:space-y-0'>
@@ -61,6 +63,7 @@ export default function About() {
                     className='w-full max-w-none flex-none rounded-2xl bg-gray-50 object-cover lg:aspect-[4/3] lg:w-[24rem]'
                     width='1200'
                     height='800'
+                    loading='lazy'
                   />
                 </div>
                 <div className='flex flex-auto justify-end lg:flex-none'>
@@ -70,6 +73,7 @@ export default function About() {
                     className='rounded-2xl bg-gray-50 object-cover lg:aspect-[7/5] lg:w-[37rem] lg:max-w-none lg:flex-none'
                     width='1200'
                     height='800'
+                    loading='lazy'
                   />
                 </div>
                 <div className='lg:w-auto lg:flex-none'>
@@ -79,6 +83,7 @@ export default function About() {
                     className='rounded-2xl bg-gray-50 object-cover lg:aspect-[4/3] lg:w-[24rem] lg:max-w-none'
                     width='1200'
                     height='800'
+                    loading='lazy'
                   />
                 </div>
               </div>

@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 const features = [
   {
     name: '高铝质隔热砖',
@@ -13,12 +15,12 @@ const features = [
   },
   {
     name: '聚轻砖',
-    description: 'Senior Developer',
+    description: '聚轻砖具有轻质、隔热、吸音和环保的特点，适用于各种建筑结构。',
     img: '/img/products/juqingzhuan.jpg',
   },
   {
     name: '陶瓷蛭石保温板',
-    description: 'Senior Developer',
+    description: '具备优异保温、防火、轻质、环保和耐久性能的建筑保温材料，常用于墙体和屋顶保温。',
     img: '/img/products/gerezhuan.jpg',
   },
 ];
@@ -51,10 +53,13 @@ export default function FeatureBlock() {
         >
           {features.map((feature) => (
             <li key={feature.name}>
-              <img
+              <Image
                 className='aspect-[3/2] w-full rounded-2xl object-cover'
                 src={feature.img}
+                width="600"
+                height="394"
                 alt={feature.name}
+                loading="lazy"
               />
               <h3 className='mt-6 text-lg font-semibold leading-8 text-gray-900'>
                 {feature.name}

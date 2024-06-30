@@ -37,6 +37,7 @@ export default function Hero() {
             width='1200'
             height='800'
             className='sm:rounded-2xl'
+            priority
           />
         </div>
       </div>

@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 const features = [
   { name: '质量管理体系认证证书', img: '/img/cert/1.jpg' },
   { name: '环境管理体系认证证书', img: '/img/cert/2.jpg' },
@@ -20,13 +22,17 @@ export default function Certification() {
         <div className='mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none'>
           <ul className='mx-auto grid max-w-xl grid-cols-1 gap-y-16 lg:max-w-none lg:grid-cols-3'>
             {features.map((feature) => (
-              <li key={feature.name} className="border border-gray-100 rounded overflow-hidden">
-                <img
+              <li
+                key={feature.name}
+                className='overflow-hidden rounded border border-gray-100'
+              >
+                <Image
                   className='mx-auto w-4/5 object-cover'
                   src={feature.img}
-                  width="384"
-                  height="542"
+                  width='384'
+                  height='542'
                   alt={feature.name}
+                  loading='lazy'
                 />
               </li>
             ))}
