@@ -16,6 +16,7 @@ import {
   PhoneIcon,
   PlayCircleIcon,
 } from '@heroicons/react/20/solid';
+import Image from 'next/image';
 
 const products = [
   {
@@ -49,7 +50,7 @@ export default function Example() {
         <div className='flex lg:flex-1'>
           <a href='/' className='-m-1.5 p-1.5'>
             <span className='sr-only'>瑞斯特耐</span>
-            <img className='h-8 w-auto' src='/img/logo.png' alt='瑞思特耐' />
+            <Image className='h-8 w-auto' src='/img/logo.png' width="389" height="96" alt='瑞斯特耐' priority />
           </a>
         </div>
         <div className='flex lg:hidden'>
@@ -166,7 +167,7 @@ export default function Example() {
           <div className='flex items-center justify-between'>
             <a href='#' className='-m-1.5 p-1.5'>
               <span className='sr-only'>瑞斯特耐</span>
-              <img className='h-8 w-auto' src='/img/logo.png' alt='瑞思特耐' />
+              <Image className='h-8 w-auto' src='/img/logo.png' width="389" height="96" alt='瑞斯特耐' priority />
             </a>
             <button
               type='button'
