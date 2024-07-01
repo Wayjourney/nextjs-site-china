@@ -68,7 +68,7 @@ export default function Footer() {
         Footer
       </h2>
       <div className='mx-auto max-w-screen-xl px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-32'>
-        <div className='flex flex-col justify-between space-y-20 lg:flex-row lg:space-x-20 lg:space-y-0'>
+        <div className='flex flex-col justify-between sm:space-y-20 lg:flex-row lg:space-x-20 lg:space-y-0'>
           <div className='space-y-8'>
             <h1 className='text-xl font-bold text-white'>瑞斯特耐</h1>
             <p className='text-sm leading-6 text-gray-300'>
@@ -89,7 +89,7 @@ export default function Footer() {
                 ))}
               </div> */}
           </div>
-          <div className='mt-16 flex flex-col gap-8 space-y-16 sm:flex-row sm:space-x-20 sm:space-y-0'>
+          <div className='mt-14 flex flex-col sm:gap-10 space-y-14 sm:flex-row sm:space-x-20 sm:space-y-0'>
             <div>
               <h3 className='text-sm font-semibold leading-6 text-gray-100'>
                 耐材产品
@@ -107,7 +107,7 @@ export default function Footer() {
                 ))}
               </ul>
             </div>
-            <div className='mt-10 md:mt-0'>
+            <div>
               <h3 className='text-sm font-semibold leading-6 text-gray-100'>
                 解决方案
               </h3>
