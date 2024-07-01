@@ -79,7 +79,7 @@ export default function Footer() {
               联系我们：+86 13938281286
             </p>
             <p className='text-sm leading-6 text-gray-300'>
-              邮箱：zzrstn@qq.com
+              公司邮箱：zzrstn@qq.com
             </p>
             <p className='text-sm leading-6 text-gray-300'>
               公司地址：河南省新密市来集镇李堂村一组
