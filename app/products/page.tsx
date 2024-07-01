@@ -1,5 +1,11 @@
 import Image from 'next/image';
+import type { Metadata } from 'next';
 import ProductList from '@/lib/data';
+
+export const metadata: Metadata = {
+  title: '郑州瑞斯特耐有限公司',
+  description: '耐材产品中心，助力高温行业节能降耗 | 郑州瑞斯特耐有限公司',
+};
 
 export default function Products() {
   return (

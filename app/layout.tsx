@@ -9,7 +9,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "郑州瑞斯特耐有限公司",
-  description: "热工设备隔热保温首选产品",
+  description: "热工设备隔热保温首选产品 | 郑州瑞斯特耐有限公司",
 };
 
 export default function RootLayout({
