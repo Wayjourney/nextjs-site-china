@@ -87,7 +87,7 @@ const navigation = {
             <div className="space-y-8">
               <h1 className="font-bold text-xl text-white">瑞斯特耐</h1>
               <p className="text-sm leading-6 text-gray-300">
-                联系我们：13938281286
+                联系我们：+86 13938281286
               </p>
               <p className="text-sm leading-6 text-gray-300">
                 邮箱：zzrstn@qq.com

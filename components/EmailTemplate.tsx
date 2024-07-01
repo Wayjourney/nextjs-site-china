@@ -38,7 +38,7 @@ export const EmailTemplate: React.FC<Readonly<EmailTemplateProps>> = ({
             />
           </Row>
 
-          <Row className='my-4'>
+          <Row className='py-4'>
             <Text className='m-0 ml-4 inline-block text-sm font-medium leading-6 text-gray-500' style={title}>
               姓名
             </Text>
