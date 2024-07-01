@@ -12,20 +12,20 @@ const products = [
     description:
       '可广泛应用于冶金、陶瓷、石油、化工等行业各种工业窑炉内衬不受溶液侵蚀)及保温层，是一种理想的节能产品。',
     img: '/img/products/gerezhuan.jpg',
-    href: '#',
+    href: '/products',
   },
   {
     name: '机制微孔莫来石砖',
     description:
       '新型微孔莫来石砖相比传统保温隔热砖，具有气孔率更高、孔径更小、导热性能更低、强度更高、重烧稳定的优点。同时还具有抗还原气氛、抗碱蒸汽的特点。',
     img: '/img/products/jizhimolaishizhuan.jpg',
-    href: '#',
+    href: '/products',
   },
   {
     name: '聚轻砖',
     description: '聚轻砖具有轻质、隔热、吸音和环保的特点，适用于各种建筑结构。',
     img: '/img/products/juqingzhuan.jpg',
-    href: '#',
+    href: '/products',
   },
 ];
 const callsToAction = [
