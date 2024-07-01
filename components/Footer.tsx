@@ -1,7 +1,3 @@
-'use client';
-
-import { JSX, SVGProps, useEffect, useState } from 'react';
-
 const navigation = {
   products: [
     { name: '高铝质隔热砖', href: '#' },
@@ -70,23 +66,13 @@ const navigation = {
 };
 
 export default function Footer() {
-  const [showICP, setShowICP] = useState(false);
-
-  useEffect(() => {
-    if (window.navigator.language.indexOf('zh') !== -1) {
-      setShowICP(true);
-    } else {
-      setShowICP(false);
-    }
-  }, []);
-
   return (
     <footer className='bg-gray-800' aria-labelledby='footer-heading'>
       <h2 id='footer-heading' className='sr-only'>
         Footer
       </h2>
       <div className='mx-auto max-w-screen-xl px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-32'>
-        <div className='flex flex-col lg:flex-row justify-between space-y-20 lg:space-y-0 lg:space-x-20'>
+        <div className='flex flex-col justify-between space-y-20 lg:flex-row lg:space-x-20 lg:space-y-0'>
           <div className='space-y-8'>
             <h1 className='text-xl font-bold text-white'>瑞斯特耐</h1>
             <p className='text-sm leading-6 text-gray-300'>
@@ -107,7 +93,7 @@ export default function Footer() {
                 ))}
               </div> */}
           </div>
-          <div className='mt-16 flex flex-col sm:flex-row gap-8 space-y-16 sm:space-y-0 sm:space-x-20'>
+          <div className='mt-16 flex flex-col gap-8 space-y-16 sm:flex-row sm:space-x-20 sm:space-y-0'>
             <div>
               <h3 className='text-sm font-semibold leading-6 text-gray-100'>
                 耐材产品
@@ -180,11 +166,9 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} 瑞斯特耐, Inc. All rights
             reserved.
           </p>
-          {showICP && (
-            <p className='py-2 text-xs leading-5 text-gray-500'>
-              豫ICP备2024073154号-1
-            </p>
-          )}
+          <p className='py-2 text-xs leading-5 text-gray-500'>
+            豫ICP备2024073154号-1
+          </p>
         </div>
       </div>
     </footer>
