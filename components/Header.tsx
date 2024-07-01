@@ -141,7 +141,7 @@ export default function Example() {
             </Transition>
           </Popover>
 
-          <a href='#' className='text-sm font-semibold leading-6 text-gray-900'>
+          {/* <a href='#' className='text-sm font-semibold leading-6 text-gray-900'>
             解决方案
           </a>
           <a href='#' className='text-sm font-semibold leading-6 text-gray-900'>
@@ -149,7 +149,7 @@ export default function Example() {
           </a>
           <a href='#' className='text-sm font-semibold leading-6 text-gray-900'>
             服务支持
-          </a>
+          </a> */}
           <a href='/inquiry' className='text-sm font-semibold leading-6 text-gray-900'>
             询单
           </a>
@@ -220,7 +220,7 @@ export default function Example() {
                     </>
                   )}
                 </Disclosure>
-                <a
+                {/* <a
                   href='#'
                   className='-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50'
                 >
@@ -237,7 +237,7 @@ export default function Example() {
                   className='-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50'
                 >
                   服务支持
-                </a>
+                </a> */}
                 <a
                   href='/inquiry'
                   className='-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50'
