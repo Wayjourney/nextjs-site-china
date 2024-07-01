@@ -11,6 +11,7 @@ const ProductList = [
   '防渗砖',
 ].map((item) => ({
   name: item,
+  href: '/products'
 }));
 
 export default ProductList

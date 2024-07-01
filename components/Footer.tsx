@@ -1,11 +1,7 @@
+import ProductList from '@/lib/data';
+
 const navigation = {
-  products: [
-    { name: '高铝质隔热砖', href: '#' },
-    { name: '机制微孔莫来石砖', href: '#' },
-    { name: '聚轻砖', href: '#' },
-    { name: '陶瓷蛭石保温板', href: '#' },
-    { name: '浇注料', href: '#' },
-  ],
+  products: ProductList,
   solutions: [
     { name: '钢铁行业', href: '#' },
     { name: '铝镁行业', href: '#' },
@@ -76,10 +72,10 @@ export default function Footer() {
           <div className='space-y-8'>
             <h1 className='text-xl font-bold text-white'>瑞斯特耐</h1>
             <p className='text-sm leading-6 text-gray-300'>
-              联系我们：<a href="tel:+86 13938281286">+86 13938281286</a>
+              联系我们：<a href='tel:+86 13938281286'>+86 13938281286</a>
             </p>
             <p className='text-sm leading-6 text-gray-300'>
-              公司邮箱：<a href="mailto:zzrstn@qq.com">zzrstn@qq.com</a>
+              公司邮箱：<a href='mailto:zzrstn@qq.com'>zzrstn@qq.com</a>
             </p>
             <p className='text-sm leading-6 text-gray-300'>
               公司地址：河南省新密市来集镇李堂村一组
