@@ -105,7 +105,7 @@ export default function Example() {
                       className='group relative rounded-lg p-6 text-sm leading-6 hover:bg-gray-50'
                     >
                       <figure>
-                        <Image className="w-auto h-11 rounded" src={item.img} width={600} height={394} alt={item.name} />
+                        <Image className="w-auto h-11 rounded" src={item.img} width={600} height={394} alt={item.name} loading='lazy' />
                       </figure>
                       <a
                         href={item.href}
