@@ -3,36 +3,44 @@
 import { Fragment, useState } from 'react';
 import { Dialog, Disclosure, Popover, Transition } from '@headlessui/react';
 import {
-  ArrowPathIcon,
   Bars3Icon,
-  ChartPieIcon,
-  CursorArrowRaysIcon,
-  FingerPrintIcon,
-  SquaresPlusIcon,
   XMarkIcon,
 } from '@heroicons/react/24/outline';
 import {
   ChevronDownIcon,
-  PhoneIcon,
-  PlayCircleIcon,
+  EnvelopeIcon,
 } from '@heroicons/react/20/solid';
 import Image from 'next/image';
 
 const products = [
   {
-    name: '隔热砖',
-    description: 'Get a better understanding of your traffic',
-    href: '#',
-    icon: ChartPieIcon,
+    name: '高铝质隔热砖',
+    description:
+      '可广泛应用于冶金、陶瓷、石油、化工等行业各种工业窑炉内衬不受溶液侵蚀)及保温层，是一种理想的节能产品。',
+    img: '/img/products/gerezhuan.jpg',
+    href: '#'
   },
   {
-    name: '浇注料',
-    description: 'Speak directly to your customers',
-    href: '#',
-    icon: CursorArrowRaysIcon,
+    name: '机制微孔莫来石砖',
+    description:
+      '新型微孔莫来石砖相比传统保温隔热砖，具有气孔率更高、孔径更小、导热性能更低、强度更高、重烧稳定的优点。同时还具有抗还原气氛、抗碱蒸汽的特点。',
+    img: '/img/products/jizhimolaishizhuan.jpg',
+    href: '#'
+  },
+  {
+    name: '聚轻砖',
+    description: '聚轻砖具有轻质、隔热、吸音和环保的特点，适用于各种建筑结构。',
+    img: '/img/products/juqingzhuan.jpg',
+    href: '#'
+  },
+  {
+    name: '陶瓷蛭石保温板',
+    description: '具备优异保温、防火、轻质、环保和耐久性能的建筑保温材料，常用于墙体和屋顶保温。',
+    img: '/img/products/gerezhuan.jpg',
+    href: '#'
   },
 ];
-const callsToAction = [{ name: 'Contact sales', href: '#', icon: PhoneIcon }];
+const callsToAction = [{ name: '联系我们', href: '/inquiry', icon: EnvelopeIcon }];
 
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ');
@@ -96,12 +104,9 @@ export default function Example() {
                       key={item.name}
                       className='group relative rounded-lg p-6 text-sm leading-6 hover:bg-gray-50'
                     >
-                      <div className='flex h-11 w-11 items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white'>
-                        <item.icon
-                          className='h-6 w-6 text-gray-600 group-hover:text-indigo-600'
-                          aria-hidden='true'
-                        />
-                      </div>
+                      <figure>
+                        <Image className="w-auto h-11 rounded" src={item.img} width={600} height={394} alt={item.name} />
+                      </figure>
                       <a
                         href={item.href}
                         className='mt-6 block font-semibold text-gray-900 outline-none'
