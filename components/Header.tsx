@@ -8,25 +8,34 @@ import Image from 'next/image';
 
 const products = [
   {
-    name: '高铝质隔热砖',
+    name: '漂珠转砖',
     description:
-      '可广泛应用于冶金、陶瓷、石油、化工等行业各种工业窑炉内衬不受溶液侵蚀)及保温层，是一种理想的节能产品。',
+      '漂珠砖是一种具备轻质、高耐火度、优异保温、抗热震和耐腐蚀等特点的高温耐火保温材料。',
     img: '/img/products/gerezhuan.jpg',
     href: '/products',
   },
   {
-    name: '机制微孔莫来石砖',
+    name: '莫来石保温砖',
     description:
-      '新型微孔莫来石砖相比传统保温隔热砖，具有气孔率更高、孔径更小、导热性能更低、强度更高、重烧稳定的优点。同时还具有抗还原气氛、抗碱蒸汽的特点。',
+      '莫来石保温砖是一种高性能的耐火保温材料，广泛应用于高温工业炉窑的内衬。',
     img: '/img/products/jizhimolaishizhuan.jpg',
     href: '/products',
   },
   {
-    name: '聚轻砖',
-    description: '聚轻砖具有轻质、隔热、吸音和环保的特点，适用于各种建筑结构。',
+    name: '高铝聚轻砖',
+    description:
+      '高铝聚轻砖是一种具备高耐火度、轻质、优良保温、高强度、抗热震和耐腐蚀等特点的高温耐火保温材料。',
     img: '/img/products/juqingzhuan.jpg',
     href: '/products',
   },
+  { name: '漂珠转砖', description: '', img: '', href: '/products' },
+  { name: '高强高铝保温砖', description: '', img: '', href: '/products' },
+  { name: '蛭石保温砖', description: '', img: '', href: '/products' },
+  { name: '陶瓷蛭石隔热板', description: '', img: '', href: '/products' },
+  { name: '微孔高强低导热砖', description: '', img: '', href: '/products' },
+  { name: '035超轻绝热保温砖', description: '', img: '', href: '/products' },
+  { name: '绝缘发泡转', description: '', img: '', href: '/products' },
+  { name: '防渗砖', description: '', img: '', href: '/products' },
 ];
 const callsToAction = [
   { name: '联系我们', href: '/contact', icon: EnvelopeIcon },
@@ -96,7 +105,7 @@ export default function Example() {
                 className='absolute inset-x-0 top-0 -z-10 bg-white pt-14 shadow-lg ring-1 ring-gray-900/5'
               >
                 <div className='mx-auto grid max-w-screen-xl grid-cols-4 gap-x-4 px-6 py-10 lg:px-8 xl:gap-x-8'>
-                  {products.map((item) => (
+                  {products.slice(0, 3).map((item) => (
                     <div
                       key={item.name}
                       className='group relative rounded-lg p-6 text-sm leading-6 hover:bg-gray-50'
@@ -216,7 +225,7 @@ export default function Example() {
                   {({ open }) => (
                     <>
                       <Disclosure.Button className='flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50'>
-                        耐材产品
+                        产品中心
                         <ChevronDownIcon
                           className={classNames(
                             open ? 'rotate-180' : '',
