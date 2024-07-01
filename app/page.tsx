@@ -11,7 +11,7 @@ export default function Home() {
         <FeatureBlock />
       </div>
 
-      <div className="bg-[#f5f5f5]">
+      <div className="bg-[#f5f5f5]" id="certification">
         <Certification />
       </div>
     </div>
