@@ -24,7 +24,7 @@ const navigation = {
   company: [
     { name: '关于我们', href: '/about' },
     { name: '行业认证', href: '/#certification' },
-    { name: '联系我们', href: '/inquiry' },
+    { name: '联系我们', href: '/contact' },
   ],
   // social: [
   //   {
