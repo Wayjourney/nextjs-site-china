@@ -15,9 +15,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.5,
     },
     {
-      url: 'https://zzreass.com/inquiry',
+      url: 'https://zzreass.com/contact',
       lastModified: new Date(),
-      changeFrequency: 'weekly',
+      changeFrequency: 'yearly',
       priority: 0.8,
     },
   ]

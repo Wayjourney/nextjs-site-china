@@ -2,14 +2,8 @@
 
 import { Fragment, useState } from 'react';
 import { Dialog, Disclosure, Popover, Transition } from '@headlessui/react';
-import {
-  Bars3Icon,
-  XMarkIcon,
-} from '@heroicons/react/24/outline';
-import {
-  ChevronDownIcon,
-  EnvelopeIcon,
-} from '@heroicons/react/20/solid';
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
+import { ChevronDownIcon, EnvelopeIcon } from '@heroicons/react/20/solid';
 import Image from 'next/image';
 
 const products = [
@@ -18,29 +12,25 @@ const products = [
     description:
       '可广泛应用于冶金、陶瓷、石油、化工等行业各种工业窑炉内衬不受溶液侵蚀)及保温层，是一种理想的节能产品。',
     img: '/img/products/gerezhuan.jpg',
-    href: '#'
+    href: '#',
   },
   {
     name: '机制微孔莫来石砖',
     description:
       '新型微孔莫来石砖相比传统保温隔热砖，具有气孔率更高、孔径更小、导热性能更低、强度更高、重烧稳定的优点。同时还具有抗还原气氛、抗碱蒸汽的特点。',
     img: '/img/products/jizhimolaishizhuan.jpg',
-    href: '#'
+    href: '#',
   },
   {
     name: '聚轻砖',
     description: '聚轻砖具有轻质、隔热、吸音和环保的特点，适用于各种建筑结构。',
     img: '/img/products/juqingzhuan.jpg',
-    href: '#'
-  },
-  {
-    name: '陶瓷蛭石保温板',
-    description: '具备优异保温、防火、轻质、环保和耐久性能的建筑保温材料，常用于墙体和屋顶保温。',
-    img: '/img/products/gerezhuan.jpg',
-    href: '#'
+    href: '#',
   },
 ];
-const callsToAction = [{ name: '联系我们', href: '/inquiry', icon: EnvelopeIcon }];
+const callsToAction = [
+  { name: '联系我们', href: '/contact', icon: EnvelopeIcon },
+];
 
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ');
@@ -58,7 +48,14 @@ export default function Example() {
         <div className='flex lg:flex-1'>
           <a href='/' className='-m-1.5 p-1.5'>
             <span className='sr-only'>瑞斯特耐</span>
-            <Image className='h-8 w-auto outline-none' src='/img/logo.png' width="389" height="96" alt='瑞斯特耐' priority />
+            <Image
+              className='h-8 w-auto outline-none'
+              src='/img/logo.png'
+              width='389'
+              height='96'
+              alt='瑞斯特耐'
+              priority
+            />
           </a>
         </div>
         <div className='flex lg:hidden'>
@@ -105,7 +102,14 @@ export default function Example() {
                       className='group relative rounded-lg p-6 text-sm leading-6 hover:bg-gray-50'
                     >
                       <figure>
-                        <Image className="w-auto h-11 rounded" src={item.img} width={600} height={394} alt={item.name} loading='lazy' />
+                        <Image
+                          className='h-11 w-auto rounded'
+                          src={item.img}
+                          width={600}
+                          height={394}
+                          alt={item.name}
+                          loading='lazy'
+                        />
                       </figure>
                       <a
                         href={item.href}
@@ -117,6 +121,12 @@ export default function Example() {
                       <p className='mt-1 text-gray-600'>{item.description}</p>
                     </div>
                   ))}
+                  <a
+                    href='/products'
+                    className='flex items-center justify-center rounded-lg p-6 text-lg font-semibold leading-6 text-slate-500 hover:bg-gray-50 hover:text-slate-600'
+                  >
+                    更多产品{' >>'}
+                  </a>
                 </div>
                 <div className='bg-gray-50'>
                   <div className='mx-auto max-w-screen-xl'>
@@ -150,8 +160,11 @@ export default function Example() {
           <a href='#' className='text-sm font-semibold leading-6 text-gray-900'>
             服务支持
           </a> */}
-          <a href='/inquiry' className='text-sm font-semibold leading-6 text-gray-900'>
-            询单
+          <a
+            href='/contact'
+            className='text-sm font-semibold leading-6 text-gray-900'
+          >
+            联系我们
           </a>
           <a
             href='/about'
@@ -172,7 +185,14 @@ export default function Example() {
           <div className='flex items-center justify-between'>
             <a href='/' className='-m-1.5 p-1.5'>
               <span className='sr-only'>瑞斯特耐</span>
-              <Image className='h-8 w-auto outline-none' src='/img/logo.png' width="389" height="96" alt='瑞斯特耐' priority />
+              <Image
+                className='h-8 w-auto outline-none'
+                src='/img/logo.png'
+                width='389'
+                height='96'
+                alt='瑞斯特耐'
+                priority
+              />
             </a>
             <button
               type='button'
@@ -206,7 +226,7 @@ export default function Example() {
                         />
                       </Disclosure.Button>
                       <Disclosure.Panel className='mt-2 space-y-2'>
-                        {[...products, ...callsToAction].map((item) => (
+                        {[...products].map((item) => (
                           <Disclosure.Button
                             key={item.name}
                             as='a'
@@ -239,10 +259,10 @@ export default function Example() {
                   服务支持
                 </a> */}
                 <a
-                  href='/inquiry'
+                  href='/contact'
                   className='-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50'
                 >
-                  询单
+                  联系我们
                 </a>
                 <a
                   href='/about'
