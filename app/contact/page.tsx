@@ -157,7 +157,7 @@ export default function Contact() {
                 <dd>
                   <a
                     className='hover:text-gray-900'
-                    href='mailto:hello@example.com'
+                    href='mailto:zzrstn@qq.com'
                   >
                     zzrstn@qq.com
                   </a>

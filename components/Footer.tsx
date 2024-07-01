@@ -76,10 +76,10 @@ export default function Footer() {
           <div className='space-y-8'>
             <h1 className='text-xl font-bold text-white'>瑞斯特耐</h1>
             <p className='text-sm leading-6 text-gray-300'>
-              联系我们：+86 13938281286
+              联系我们：<a href="tel:+86 13938281286">+86 13938281286</a>
             </p>
             <p className='text-sm leading-6 text-gray-300'>
-              公司邮箱：zzrstn@qq.com
+              公司邮箱：<a href="mailto:zzrstn@qq.com">zzrstn@qq.com</a>
             </p>
             <p className='text-sm leading-6 text-gray-300'>
               公司地址：河南省新密市来集镇李堂村一组
