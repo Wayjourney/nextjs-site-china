@@ -9,7 +9,8 @@ const ProductList = [
   '035超轻绝热保温砖',
   '绝缘发泡转',
   '防渗砖',
-].map((item) => ({
+].map((item, index) => ({
+  id: index + 1,
   name: item,
   href: '/products'
 }));

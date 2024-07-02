@@ -55,7 +55,7 @@ export default function FeatureBlock() {
           {features.map((feature) => (
             <li
               key={feature.name}
-              className='relative overflow-hidden rounded-lg shadow-lg lg:rounded-none lg:shadow-none'
+              className='relative overflow-hidden bg-white shadow-card rounded-xl lg:rounded-none lg:shadow-none'
             >
               <Image
                 className='aspect-[3/2] w-full object-cover lg:rounded-2xl'
