@@ -1,6 +1,6 @@
 'use client';
 
-import { Fragment, useState } from 'react';
+import { Fragment, useState, useRef } from 'react';
 import { Dialog, Disclosure, Popover, Transition } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import { ChevronDownIcon, EnvelopeIcon } from '@heroicons/react/20/solid';
@@ -47,11 +47,31 @@ function classNames(...classes: string[]) {
 
 export default function Example() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const buttonRef = useRef<HTMLButtonElement>(null);
+  const [openState, setOpenState] = useState(false);
+
+  let timeout: number | undefined;
+  const timeoutDuration = 0;
+
+  const toggleMenu = (open: boolean) => {
+    setOpenState((openState) => !openState);
+    buttonRef.current?.click();
+  };
+
+  const onHover = (open: boolean, action: string) => {
+    if (
+      (!open && !openState && action === 'onMouseEnter') ||
+      (open && openState && action === 'onMouseLeave')
+    ) {
+      clearTimeout(timeout);
+      timeout = window.setTimeout(() => toggleMenu(open), timeoutDuration);
+    }
+  };
 
   return (
     <header className='relative isolate z-10 bg-white'>
       <nav
-        className='mx-auto flex max-w-screen-xl items-center justify-between p-6 lg:px-8'
+        className='mx-auto flex h-20 max-w-screen-xl items-center justify-between px-6 lg:px-8'
         aria-label='Global'
       >
         <div className='flex lg:flex-1'>
@@ -77,87 +97,100 @@ export default function Example() {
             <Bars3Icon className='h-6 w-6' aria-hidden='true' />
           </button>
         </div>
-        <Popover.Group className='hidden lg:flex lg:gap-x-12'>
+        <Popover.Group className='hidden lg:flex lg:h-full lg:items-center lg:gap-x-12'>
           <a href='/' className='text-sm font-semibold leading-6 text-gray-900'>
             首页
           </a>
 
-          <Popover>
-            <Popover.Button className='flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900 outline-none'>
-              产品中心
-              <ChevronDownIcon
-                className='h-5 w-5 flex-none text-gray-400'
-                aria-hidden='true'
-              />
-            </Popover.Button>
-
-            <Transition
-              as={Fragment}
-              enter='transition ease-out duration-200'
-              enterFrom='opacity-0 translate-y-1'
-              enterTo='opacity-100 translate-y-0'
-              leave='transition ease-in duration-150'
-              leaveFrom='opacity-100 translate-y-0'
-              leaveTo='opacity-0 translate-y-1'
-            >
-              <Popover.Panel
-                focus={true}
-                className='absolute inset-x-0 top-0 -z-10 bg-white pt-14 shadow-lg ring-1 ring-gray-900/5'
+          <Popover className='h-full'>
+            {({ open }) => (
+              <div
+                onMouseEnter={() => onHover(open, 'onMouseEnter')}
+                onMouseLeave={() => onHover(open, 'onMouseLeave')}
+                className='flex h-full flex-col'
               >
-                <div className='mx-auto grid max-w-screen-xl grid-cols-4 gap-x-4 px-6 py-10 lg:px-8 xl:gap-x-8'>
-                  {products.slice(0, 3).map((item) => (
-                    <div
-                      key={item.name}
-                      className='group relative rounded-lg p-6 text-sm leading-6 hover:bg-gray-50'
-                    >
-                      <figure>
-                        <Image
-                          className='h-11 w-auto rounded'
-                          src={item.img}
-                          width={600}
-                          height={394}
-                          alt={item.name}
-                          loading='lazy'
-                        />
-                      </figure>
-                      <a
-                        href={item.href}
-                        className='mt-6 block font-semibold text-gray-900 outline-none'
-                      >
-                        {item.name}
-                        <span className='absolute inset-0' />
-                      </a>
-                      <p className='mt-1 text-gray-600'>{item.description}</p>
-                    </div>
-                  ))}
-                  <a
-                    href='/products'
-                    className='flex items-center justify-center rounded-lg p-6 text-lg font-semibold leading-6 text-slate-500 hover:bg-gray-50 hover:text-slate-600'
+                <Popover.Button
+                  ref={buttonRef}
+                  className='flex h-full items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900 outline-none'
+                >
+                  产品中心
+                  <ChevronDownIcon
+                    className='h-5 w-5 flex-none text-gray-400'
+                    aria-hidden='true'
+                  />
+                </Popover.Button>
+
+                <Transition
+                  as={Fragment}
+                  enter='transition ease-out duration-200'
+                  enterFrom='opacity-0 translate-y-1'
+                  enterTo='opacity-100 translate-y-0'
+                  leave='transition ease-in duration-150'
+                  leaveFrom='opacity-100 translate-y-0'
+                  leaveTo='opacity-0 translate-y-1'
+                >
+                  <Popover.Panel
+                    focus={true}
+                    className='absolute inset-x-0 top-full -z-10 bg-white shadow-lg ring-1 ring-gray-900/5'
                   >
-                    更多产品{' >>'}
-                  </a>
-                </div>
-                <div className='bg-gray-50'>
-                  <div className='mx-auto max-w-screen-xl'>
-                    <div className='grid grid-cols-1 divide-x divide-gray-900/5 border-x border-gray-900/5'>
-                      {callsToAction.map((item) => (
-                        <a
+                    <div className='mx-auto grid max-w-screen-xl grid-cols-4 gap-x-4 px-6 py-10 lg:px-8 xl:gap-x-8'>
+                      {products.slice(0, 3).map((item) => (
+                        <div
                           key={item.name}
-                          href={item.href}
-                          className='flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-100'
+                          className='group relative rounded-lg p-6 text-sm leading-6 hover:bg-gray-50'
                         >
-                          <item.icon
-                            className='h-5 w-5 flex-none text-gray-400'
-                            aria-hidden='true'
-                          />
-                          {item.name}
-                        </a>
+                          <figure>
+                            <Image
+                              className='h-11 w-auto rounded'
+                              src={item.img}
+                              width={600}
+                              height={394}
+                              alt={item.name}
+                              loading='lazy'
+                            />
+                          </figure>
+                          <a
+                            href={item.href}
+                            className='mt-6 block font-semibold text-gray-900 outline-none'
+                          >
+                            {item.name}
+                            <span className='absolute inset-0' />
+                          </a>
+                          <p className='mt-1 text-gray-600'>
+                            {item.description}
+                          </p>
+                        </div>
                       ))}
+                      <a
+                        href='/products'
+                        className='flex items-center justify-center rounded-lg p-6 text-lg font-semibold leading-6 text-slate-500 hover:bg-gray-50 hover:text-slate-600'
+                      >
+                        更多产品{' >>'}
+                      </a>
                     </div>
-                  </div>
-                </div>
-              </Popover.Panel>
-            </Transition>
+                    <div className='bg-gray-50'>
+                      <div className='mx-auto max-w-screen-xl'>
+                        <div className='grid grid-cols-1 divide-x divide-gray-900/5 border-x border-gray-900/5'>
+                          {callsToAction.map((item) => (
+                            <a
+                              key={item.name}
+                              href={item.href}
+                              className='flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-100'
+                            >
+                              <item.icon
+                                className='h-5 w-5 flex-none text-gray-400'
+                                aria-hidden='true'
+                              />
+                              {item.name}
+                            </a>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </Popover.Panel>
+                </Transition>
+              </div>
+            )}
           </Popover>
 
           {/* <a href='#' className='text-sm font-semibold leading-6 text-gray-900'>
