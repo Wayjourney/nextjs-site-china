@@ -22,12 +22,9 @@ export default function Certification() {
         <div className='mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none'>
           <ul className='mx-auto grid max-w-xl grid-cols-1 gap-y-16 lg:max-w-none lg:grid-cols-3'>
             {features.map((feature) => (
-              <li
-                key={feature.name}
-                className='overflow-hidden rounded border border-gray-100'
-              >
+              <li key={feature.name} className='flex justify-center'>
                 <Image
-                  className='mx-auto w-4/5 object-cover'
+                  className='mx-auto w-4/5 rounded-lg border-[10px] border-white object-cover shadow-lg'
                   src={feature.img}
                   width='384'
                   height='542'
