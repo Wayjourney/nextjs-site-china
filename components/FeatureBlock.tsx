@@ -20,15 +20,16 @@ const features = [
   },
   {
     name: '陶瓷蛭石保温板',
-    description: '具备优异保温、防火、轻质、环保和耐久性能的建筑保温材料，常用于墙体和屋顶保温。',
+    description:
+      '具备优异保温、防火、轻质、环保和耐久性能的建筑保温材料，常用于墙体和屋顶保温。',
     img: '/img/products/gerezhuan.jpg',
   },
 ];
 
 export default function FeatureBlock() {
   return (
-    <div className='bg-white py-5 md:py-12 lg:py-8'>
-      <div className='mx-auto grid max-w-screen-xl grid-cols-1 gap-x-8 gap-y-20 px-6 lg:px-8 xl:grid-cols-3'>
+    <div className='bg-white pb-12 pt-0 lg:pb-20 lg:pt-8'>
+      <div className='mx-auto grid max-w-screen-xl grid-cols-1 gap-x-8 gap-y-12 px-6 lg:gap-y-20 lg:px-8 xl:grid-cols-3'>
         <div className='mx-auto max-w-2xl lg:mx-0'>
           <h2 className='text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl'>
             我们的产品
@@ -49,24 +50,35 @@ export default function FeatureBlock() {
         </div>
         <ul
           role='list'
-          className='mx-auto grid max-w-2xl grid-cols-1 gap-x-6 gap-y-20 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:gap-x-8 xl:col-span-2'
+          className='mx-auto grid max-w-2xl grid-cols-1 gap-x-6 gap-y-12 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:gap-x-8 lg:gap-y-20 xl:col-span-2'
         >
           {features.map((feature) => (
-            <li key={feature.name}>
+            <li
+              key={feature.name}
+              className='relative overflow-hidden rounded-lg shadow-lg lg:rounded-none lg:shadow-none'
+            >
               <Image
-                className='aspect-[3/2] w-full rounded-2xl object-cover'
+                className='aspect-[3/2] w-full object-cover lg:rounded-2xl'
                 src={feature.img}
-                width="600"
-                height="394"
+                width='600'
+                height='394'
                 alt={feature.name}
-                loading="lazy"
+                loading='lazy'
               />
-              <h3 className='mt-6 text-lg font-semibold leading-8 text-gray-900'>
-                {feature.name}
-              </h3>
-              <p className='mt-4 text-base leading-7 text-gray-600'>
-                {feature.description}
-              </p>
+              <div className='p-4 lg:p-0'>
+                <h3 className='text-lg font-semibold leading-8 text-gray-900 lg:mt-6'>
+                  <a href='/products'>
+                    <span
+                      aria-hidden='true'
+                      className='absolute inset-0'
+                    ></span>
+                    {feature.name}
+                  </a>
+                </h3>
+                <p className='mt-2.5 lg:mt-3 text-base leading-7 text-gray-600'>
+                  {feature.description}
+                </p>
+              </div>
             </li>
           ))}
         </ul>

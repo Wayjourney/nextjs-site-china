@@ -25,7 +25,7 @@ export default function Hero() {
             </div>
           </div>
         </div>
-        <div className='mx-auto mt-20 max-w-[600px] sm:mt-24 lg:mx-0 lg:mt-0'>
+        <div className='mx-auto mt-20 sm:mt-24 lg:mx-0 lg:mt-0'>
           <div
             className='absolute inset-y-0 right-1/2 -z-10 -mr-10 w-[200%] skew-x-[-30deg] bg-white shadow-xl shadow-indigo-600/10 ring-1 ring-indigo-50 md:-mr-20 lg:-mr-36'
             aria-hidden='true'
@@ -36,7 +36,7 @@ export default function Hero() {
             alt='瑞斯特耐工厂'
             width='1200'
             height='800'
-            className='sm:rounded-2xl'
+            className='lg:rounded-2xl'
             priority
           />
         </div>
