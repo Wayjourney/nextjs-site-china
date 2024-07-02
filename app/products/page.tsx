@@ -15,7 +15,7 @@ export default function Products() {
         {ProductList.map((item, index) => (
           <div
             key={index}
-            className='bg-white shadow-card p-3 rounded-xl'
+            className='bg-white shadow-card pt-3 px-3 pb-4 rounded-xl'
           >
             <div className='aspect-[3/2] overflow-hidden rounded-xl bg-gray-200'>
               <Image
