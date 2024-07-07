@@ -29,7 +29,7 @@ const features = [
 export default function FeatureBlock() {
   return (
     <div className='bg-white pb-12 pt-0 lg:pb-20 lg:pt-8'>
-      <div className='mx-auto grid max-w-screen-xl grid-cols-1 gap-x-8 gap-y-12 px-6 lg:gap-y-20 lg:px-8 xl:grid-cols-3'>
+      <div className='mx-auto grid max-w-screen-xl grid-cols-1 gap-x-8 gap-y-12 px-6 lg:gap-y-20 lg:px-8 lg:grid-cols-3'>
         <div className='mx-auto max-w-2xl lg:mx-0'>
           <h2 className='text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl'>
             我们的产品
@@ -50,7 +50,7 @@ export default function FeatureBlock() {
         </div>
         <ul
           role='list'
-          className='mx-auto grid max-w-2xl grid-cols-1 gap-x-6 gap-y-12 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:gap-x-8 lg:gap-y-20 xl:col-span-2'
+          className='mx-auto grid max-w-2xl grid-cols-1 gap-x-6 gap-y-12 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:gap-x-8 lg:gap-y-20 lg:col-span-2'
         >
           {features.map((feature) => (
             <li
