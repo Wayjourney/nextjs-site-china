@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function Products() {
   return (
-    <div className='mx-auto my-20 max-w-screen-xl px-6 lg:px-8'>
+    <div className='mx-auto mt-14 mb-24 max-w-screen-xl px-6 lg:px-8'>
       <h1 className='mb-6 text-3xl font-bold text-slate-800'>产品列表</h1>
       <div className='grid grid-cols-1 gap-x-5 gap-y-6 sm:gap-y-10 sm:mx-0 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>
         {ProductList.map((item, index) => (
