@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import type { Metadata } from 'next';
 import ProductList from '@/lib/data';
 
@@ -15,7 +16,7 @@ export default function Products() {
         {ProductList.map((item, index) => (
           <div
             key={index}
-            className='bg-white shadow-card pt-3 px-3 pb-4 rounded-xl'
+            className='relative bg-white shadow-card pt-3 px-3 pb-4 rounded-xl'
           >
             <div className='aspect-[3/2] overflow-hidden rounded-xl bg-gray-200'>
               <Image
@@ -28,10 +29,10 @@ export default function Products() {
             </div>
             <div className='pt-4'>
               <h3 className='text-center text-base font-medium text-slate-700'>
-                <a href='#'>
+                <Link href={`/products/${item.id}`} scroll={false}>
                   <span aria-hidden='true' className='absolute inset-0'></span>
                   {item.name}
-                </a>
+                </Link>
               </h3>
             </div>
           </div>
