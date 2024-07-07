@@ -1,6 +1,6 @@
 'use client';
 
-import { Fragment, useState, useRef } from 'react';
+import { Fragment, useState, useRef, MouseEvent } from 'react';
 import { Dialog, Disclosure, Popover, Transition } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import { ChevronDownIcon, EnvelopeIcon } from '@heroicons/react/20/solid';
@@ -48,17 +48,28 @@ function classNames(...classes: string[]) {
 export default function Example() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const buttonRef = useRef<HTMLButtonElement>(null);
+  const panelRef = useRef<HTMLDivElement>(null);
   const [openState, setOpenState] = useState(false);
 
   let timeout: number | undefined;
-  const timeoutDuration = 0;
+  const timeoutDuration = 200;
 
   const toggleMenu = (open: boolean) => {
     setOpenState((openState) => !openState);
     buttonRef.current?.click();
   };
 
-  const onHover = (open: boolean, action: string) => {
+  const onHover = (e: MouseEvent<HTMLDivElement>, open: boolean, action: string) => {
+    if (open && openState && e.target === buttonRef?.current && action === 'onMouseEnter') {
+      clearTimeout(timeout);
+      return
+    }
+
+    if (open && openState && e.target === panelRef?.current && action === 'onMouseEnter') {
+      clearTimeout(timeout);
+      return
+    }
+
     if (
       (!open && !openState && action === 'onMouseEnter') ||
       (open && openState && action === 'onMouseLeave')
@@ -105,8 +116,8 @@ export default function Example() {
           <Popover className='h-full'>
             {({ open }) => (
               <div
-                onMouseEnter={() => onHover(open, 'onMouseEnter')}
-                onMouseLeave={() => onHover(open, 'onMouseLeave')}
+                onMouseEnter={(e) => onHover(e, open, 'onMouseEnter')}
+                onMouseLeave={(e) => onHover(e, open, 'onMouseLeave')}
                 className='flex h-full flex-col'
               >
                 <Popover.Button
@@ -133,7 +144,7 @@ export default function Example() {
                     focus={true}
                     className='absolute inset-x-0 top-full -z-10 bg-white shadow-lg ring-1 ring-gray-900/5'
                   >
-                    <div className='mx-auto grid max-w-screen-xl grid-cols-4 gap-x-4 px-6 py-10 lg:px-8 xl:gap-x-8'>
+                    <div ref={panelRef} className='mx-auto grid max-w-screen-xl grid-cols-4 gap-x-4 px-6 py-10 lg:px-8 xl:gap-x-8'>
                       {products.slice(0, 3).map((item) => (
                         <div
                           key={item.name}
