@@ -52,7 +52,7 @@ export default function Example() {
   const [openState, setOpenState] = useState(false);
 
   let timeout: number | undefined;
-  const timeoutDuration = 200;
+  const timeoutDuration = 100;
 
   const toggleMenu = (open: boolean) => {
     setOpenState((openState) => !openState);

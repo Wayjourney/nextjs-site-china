@@ -92,7 +92,7 @@ export default function About() {
         </div>
       </div>
 
-      <div className='mx-auto my-20 max-w-screen-xl px-6 lg:my-32 lg:px-8'>
+      <div className='mx-auto mt-14 mb-24 max-w-screen-xl px-6 lg:my-32 lg:px-8'>
         <div>
           <h2 className='text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl'>
             公司历史

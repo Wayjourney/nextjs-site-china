@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import type { Metadata } from 'next';
 import ProductList from '@/lib/data';
 
@@ -9,13 +10,13 @@ export const metadata: Metadata = {
 
 export default function Products() {
   return (
-    <div className='mx-auto my-20 max-w-screen-xl px-6 lg:px-8'>
+    <div className='mx-auto mt-14 mb-24 max-w-screen-xl px-6 lg:px-8'>
       <h1 className='mb-6 text-3xl font-bold text-slate-800'>产品列表</h1>
       <div className='grid grid-cols-1 gap-x-5 gap-y-6 sm:gap-y-10 sm:mx-0 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>
         {ProductList.map((item, index) => (
           <div
             key={index}
-            className='bg-white shadow-card pt-3 px-3 pb-4 rounded-xl'
+            className='relative bg-white shadow-card pt-3 px-3 pb-4 rounded-xl'
           >
             <div className='aspect-[3/2] overflow-hidden rounded-xl bg-gray-200'>
               <Image
@@ -28,10 +29,10 @@ export default function Products() {
             </div>
             <div className='pt-4'>
               <h3 className='text-center text-base font-medium text-slate-700'>
-                <a href='#'>
+                <Link href={`/products/${item.id}`} scroll={false}>
                   <span aria-hidden='true' className='absolute inset-0'></span>
                   {item.name}
-                </a>
+                </Link>
               </h3>
             </div>
           </div>
