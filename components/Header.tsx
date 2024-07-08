@@ -266,6 +266,7 @@ export default function Example() {
                 <Link
                   href='/'
                   className='-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50'
+                  onClick={() => setMobileMenuOpen(false)}
                 >
                   首页
                 </Link>
@@ -325,12 +326,14 @@ export default function Example() {
                 <Link
                   href='/contact'
                   className='-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50'
+                  onClick={() => setMobileMenuOpen(false)}
                 >
                   联系我们
                 </Link>
                 <Link
                   href='/about'
                   className='-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50'
+                  onClick={() => setMobileMenuOpen(false)}
                 >
                   关于我们
                 </Link>
