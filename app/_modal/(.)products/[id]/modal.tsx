@@ -1,18 +1,22 @@
 'use client';
 
-import { type ElementRef, useEffect, useRef, useState } from 'react';
+import React, { type ElementRef, useEffect, useRef, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { createPortal } from 'react-dom';
 import {
   Modal,
   ModalContent,
-  ModalHeader,
   ModalBody,
   ModalFooter,
   useDisclosure,
 } from '@nextui-org/modal';
+import { AppRouterInstance } from 'next/dist/shared/lib/app-router-context.shared-runtime';
 
-export function ModalPage({ children }: { children: React.ReactNode }) {
+export function ModalPage({
+  children,
+}: {
+  children: React.ReactNode | ((onClose: () => void, router: AppRouterInstance) => React.ReactNode);
+}) {
   const router = useRouter();
   const dialogRef = useRef<ElementRef<'dialog'>>(null);
 
@@ -30,12 +34,12 @@ export function ModalPage({ children }: { children: React.ReactNode }) {
   }
 
   return createPortal(
-    <Modal size='full' isOpen={isOpen} onClose={onDismiss}>
+    <Modal size='full' isOpen={isOpen} onClose={onDismiss} className='-z-[1]'>
       <ModalContent>
         {(onClose) => (
           <>
             <ModalBody>
-              {children}
+              {typeof children === 'function' ? children(onClose, router) : children}
             </ModalBody>
             <ModalFooter>
               <button
