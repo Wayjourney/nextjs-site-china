@@ -8,9 +8,9 @@ import Image from 'next/image';
 
 const products = [
   {
-    name: '漂珠转砖',
+    name: '高强漂珠砖',
     description:
-      '漂珠砖是一种具备轻质、高耐火度、优异保温、抗热震和耐腐蚀等特点的高温耐火保温材料。',
+      '高强漂珠砖是一种具备轻质、高耐火度、优异保温、抗热震和耐腐蚀等特点的高温耐火保温材料。',
     img: '/img/products/gerezhuan.jpg',
     href: '/products',
   },
@@ -28,7 +28,7 @@ const products = [
     img: '/img/products/juqingzhuan.jpg',
     href: '/products',
   },
-  { name: '漂珠转砖', description: '', img: '', href: '/products' },
+  { name: '高强漂珠砖', description: '', img: '', href: '/products' },
   { name: '高强高铝保温砖', description: '', img: '', href: '/products' },
   { name: '蛭石保温砖', description: '', img: '', href: '/products' },
   { name: '陶瓷蛭石隔热板', description: '', img: '', href: '/products' },

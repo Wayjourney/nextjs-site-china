@@ -1,5 +1,5 @@
 const ProductList = [
-  { id: 1, name: '漂珠砖', href: '/products/1', description: [] },
+  { id: 1, name: '高强漂珠砖', href: '/products/1', description: [] },
   { id: 2, name: '高强高铝保温砖', href: '/products/2', description: [] },
   { id: 3, name: '蛭石保温砖', href: '/products/3', description: [] },
   { id: 4, name: '陶瓷蛭石隔热板', href: '/products/4', description: [] },
