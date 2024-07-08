@@ -49,30 +49,28 @@ export default function Example() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const buttonRef = useRef<HTMLButtonElement>(null);
   const panelRef = useRef<HTMLDivElement>(null);
-  const [openState, setOpenState] = useState(false);
 
   let timeout: number | undefined;
   const timeoutDuration = 100;
 
   const toggleMenu = (open: boolean) => {
-    setOpenState((openState) => !openState);
     buttonRef.current?.click();
   };
 
   const onHover = (e: MouseEvent<HTMLDivElement>, open: boolean, action: string) => {
-    if (open && openState && e.target === buttonRef?.current && action === 'onMouseEnter') {
+    if (open && e.target === buttonRef?.current && action === 'onMouseEnter') {
       clearTimeout(timeout);
       return
     }
 
-    if (open && openState && e.target === panelRef?.current && action === 'onMouseEnter') {
+    if (open && e.target === panelRef?.current && action === 'onMouseEnter') {
       clearTimeout(timeout);
       return
     }
 
     if (
-      (!open && !openState && action === 'onMouseEnter') ||
-      (open && openState && action === 'onMouseLeave')
+      (!open && action === 'onMouseEnter') ||
+      (open && action === 'onMouseLeave')
     ) {
       clearTimeout(timeout);
       timeout = window.setTimeout(() => toggleMenu(open), timeoutDuration);
