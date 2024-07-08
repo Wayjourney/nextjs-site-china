@@ -30,6 +30,7 @@ export default function ProductPage({
             <Link
               href='/contact'
               className='mb-8 flex w-full items-center justify-center rounded-md bg-blue-500 px-4 py-2 font-semibold text-white shadow transition duration-150 ease-in-out hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-indigo-400'
+              scroll={true}
             >
               联系我们
             </Link>
