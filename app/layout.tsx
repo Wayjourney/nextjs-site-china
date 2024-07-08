@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import type { Viewport } from 'next'
 import { Inter } from "next/font/google";
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
@@ -11,6 +12,14 @@ export const metadata: Metadata = {
   description: "热工设备隔热保温首选产品 | 郑州瑞斯特耐有限公司",
 };
 
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+  viewportFit: "cover"
+}
+
 export default function RootLayout({
   children,
   modal
@@ -21,7 +30,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0,viewport-fit=cover" />
         <meta name="baidu-site-verification" content="codeva-zVYXn1UOnJ" />
       </head>
       <body className={inter.className}>
