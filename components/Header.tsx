@@ -1,10 +1,12 @@
 'use client';
 
+import Link from 'next/link';
+import Image from 'next/image';
 import { Fragment, useState, useRef, MouseEvent } from 'react';
 import { Dialog, Disclosure, Popover, Transition } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import { ChevronDownIcon, EnvelopeIcon } from '@heroicons/react/20/solid';
-import Image from 'next/image';
+import ProductList from '@/lib/data';
 
 const products = [
   {
@@ -12,31 +14,24 @@ const products = [
     description:
       '高强漂珠砖是一种具备轻质、高耐火度、优异保温、抗热震和耐腐蚀等特点的高温耐火保温材料。',
     img: '/img/products/gerezhuan.jpg',
-    href: '/products',
+    href: '/products/1',
   },
   {
-    name: '莫来石保温砖',
+    name: '高强高铝保温砖',
     description:
-      '莫来石保温砖是一种高性能的耐火保温材料，广泛应用于高温工业炉窑的内衬。',
+      '高强高铝保温砖是一种高性能的耐火保温材料，广泛应用于高温工业炉窑的内衬。',
     img: '/img/products/jizhimolaishizhuan.jpg',
-    href: '/products',
+    href: '/products/2',
   },
   {
-    name: '高铝聚轻砖',
+    name: '蛭石保温砖',
     description:
-      '高铝聚轻砖是一种具备高耐火度、轻质、优良保温、高强度、抗热震和耐腐蚀等特点的高温耐火保温材料。',
+      '蛭石保温砖是一种具备高耐火度、轻质、优良保温、高强度、抗热震和耐腐蚀等特点的高温耐火保温材料。',
     img: '/img/products/juqingzhuan.jpg',
-    href: '/products',
+    href: '/products/3',
   },
-  { name: '高强漂珠砖', description: '', img: '', href: '/products' },
-  { name: '高强高铝保温砖', description: '', img: '', href: '/products' },
-  { name: '蛭石保温砖', description: '', img: '', href: '/products' },
-  { name: '陶瓷蛭石隔热板', description: '', img: '', href: '/products' },
-  { name: '微孔高强低导热砖', description: '', img: '', href: '/products' },
-  { name: '035超轻绝热保温砖', description: '', img: '', href: '/products' },
-  { name: '绝缘发泡转', description: '', img: '', href: '/products' },
-  { name: '防渗砖', description: '', img: '', href: '/products' },
 ];
+
 const callsToAction = [
   { name: '联系我们', href: '/contact', icon: EnvelopeIcon },
 ];
@@ -53,19 +48,23 @@ export default function Example() {
   let timeout: number | undefined;
   const timeoutDuration = 100;
 
-  const toggleMenu = (open: boolean) => {
+  const toggleMenu = () => {
     buttonRef.current?.click();
   };
 
-  const onHover = (e: MouseEvent<HTMLDivElement>, open: boolean, action: string) => {
+  const onHover = (
+    e: MouseEvent<HTMLDivElement>,
+    open: boolean,
+    action: string
+  ) => {
     if (open && e.target === buttonRef?.current && action === 'onMouseEnter') {
       clearTimeout(timeout);
-      return
+      return;
     }
 
     if (open && e.target === panelRef?.current && action === 'onMouseEnter') {
       clearTimeout(timeout);
-      return
+      return;
     }
 
     if (
@@ -73,7 +72,7 @@ export default function Example() {
       (open && action === 'onMouseLeave')
     ) {
       clearTimeout(timeout);
-      timeout = window.setTimeout(() => toggleMenu(open), timeoutDuration);
+      timeout = window.setTimeout(() => toggleMenu(), timeoutDuration);
     }
   };
 
@@ -84,7 +83,7 @@ export default function Example() {
         aria-label='Global'
       >
         <div className='flex lg:flex-1'>
-          <a href='/' className='-m-1.5 p-1.5'>
+          <Link href='/' className='-m-1.5 p-1.5'>
             <span className='sr-only'>瑞斯特耐</span>
             <Image
               className='h-8 w-auto outline-none'
@@ -94,7 +93,7 @@ export default function Example() {
               alt='瑞斯特耐'
               priority
             />
-          </a>
+          </Link>
         </div>
         <div className='flex lg:hidden'>
           <button
@@ -107,9 +106,12 @@ export default function Example() {
           </button>
         </div>
         <Popover.Group className='hidden lg:flex lg:h-full lg:items-center lg:gap-x-12'>
-          <a href='/' className='text-sm font-semibold leading-6 text-gray-900'>
+          <Link
+            href='/'
+            className='text-sm font-semibold leading-6 text-gray-900'
+          >
             首页
-          </a>
+          </Link>
 
           <Popover className='h-full'>
             {({ open }) => (
@@ -142,7 +144,10 @@ export default function Example() {
                     focus={true}
                     className='absolute inset-x-0 top-full -z-10 bg-white shadow-lg ring-1 ring-gray-900/5'
                   >
-                    <div ref={panelRef} className='mx-auto grid max-w-screen-xl grid-cols-4 gap-x-4 px-6 py-10 lg:px-8 xl:gap-x-8'>
+                    <div
+                      ref={panelRef}
+                      className='mx-auto grid max-w-screen-xl grid-cols-4 gap-x-4 px-6 py-10 lg:px-8 xl:gap-x-8'
+                    >
                       {products.slice(0, 3).map((item) => (
                         <div
                           key={item.name}
@@ -158,30 +163,31 @@ export default function Example() {
                               loading='lazy'
                             />
                           </figure>
-                          <a
+                          <Link
                             href={item.href}
                             className='mt-6 block font-semibold text-gray-900 outline-none'
+                            onClick={toggleMenu}
                           >
                             {item.name}
                             <span className='absolute inset-0' />
-                          </a>
+                          </Link>
                           <p className='mt-1 text-gray-600'>
                             {item.description}
                           </p>
                         </div>
                       ))}
-                      <a
+                      <Link
                         href='/products'
                         className='flex items-center justify-center rounded-lg p-6 text-lg font-semibold leading-6 text-slate-500 hover:bg-gray-50 hover:text-slate-600'
                       >
                         更多产品{' >>'}
-                      </a>
+                      </Link>
                     </div>
                     <div className='bg-gray-50'>
                       <div className='mx-auto max-w-screen-xl'>
                         <div className='grid grid-cols-1 divide-x divide-gray-900/5 border-x border-gray-900/5'>
                           {callsToAction.map((item) => (
-                            <a
+                            <Link
                               key={item.name}
                               href={item.href}
                               className='flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-100'
@@ -191,7 +197,7 @@ export default function Example() {
                                 aria-hidden='true'
                               />
                               {item.name}
-                            </a>
+                            </Link>
                           ))}
                         </div>
                       </div>
@@ -211,18 +217,18 @@ export default function Example() {
           <a href='#' className='text-sm font-semibold leading-6 text-gray-900'>
             服务支持
           </a> */}
-          <a
+          <Link
             href='/contact'
             className='text-sm font-semibold leading-6 text-gray-900'
           >
             联系我们
-          </a>
-          <a
+          </Link>
+          <Link
             href='/about'
             className='text-sm font-semibold leading-6 text-gray-900'
           >
             关于我们
-          </a>
+          </Link>
         </Popover.Group>
       </nav>
       <Dialog
@@ -234,7 +240,7 @@ export default function Example() {
         <div className='fixed inset-0 z-10' />
         <Dialog.Panel className='fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10'>
           <div className='flex items-center justify-between'>
-            <a href='/' className='-m-1.5 p-1.5'>
+            <Link href='/' className='-m-1.5 p-1.5'>
               <span className='sr-only'>瑞斯特耐</span>
               <Image
                 className='h-8 w-auto outline-none'
@@ -244,7 +250,7 @@ export default function Example() {
                 alt='瑞斯特耐'
                 priority
               />
-            </a>
+            </Link>
             <button
               type='button'
               className='-m-2.5 rounded-md p-2.5 text-gray-700'
@@ -257,12 +263,12 @@ export default function Example() {
           <div className='mt-6 flow-root'>
             <div className='-my-6 divide-y divide-gray-500/10'>
               <div className='space-y-2 py-6'>
-                <a
-                  href='#'
+                <Link
+                  href='/'
                   className='-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50'
                 >
                   首页
-                </a>
+                </Link>
                 <Disclosure as='div' className='-mx-3'>
                   {({ open }) => (
                     <>
@@ -277,7 +283,14 @@ export default function Example() {
                         />
                       </Disclosure.Button>
                       <Disclosure.Panel className='mt-2 space-y-2'>
-                        {[...products].map((item) => (
+                        <Disclosure.Button
+                          as='a'
+                          href='/products'
+                          className='block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50'
+                        >
+                          所有产品
+                        </Disclosure.Button>
+                        {ProductList.map((item) => (
                           <Disclosure.Button
                             key={item.name}
                             as='a'
@@ -309,18 +322,18 @@ export default function Example() {
                 >
                   服务支持
                 </a> */}
-                <a
+                <Link
                   href='/contact'
                   className='-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50'
                 >
                   联系我们
-                </a>
-                <a
+                </Link>
+                <Link
                   href='/about'
                   className='-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50'
                 >
                   关于我们
-                </a>
+                </Link>
               </div>
             </div>
           </div>
