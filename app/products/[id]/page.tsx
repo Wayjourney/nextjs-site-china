@@ -3,7 +3,9 @@ import Link from 'next/link';
 import { HomeIcon } from '@heroicons/react/20/solid';
 import ProductList from '@/lib/data';
 
-export async function generateMetadata({ params: { id }, }: {
+export async function generateMetadata({
+  params: { id },
+}: {
   params: { id: string };
 }) {
   const product = ProductList.find((item) => item.id === Number(id));
@@ -11,7 +13,7 @@ export async function generateMetadata({ params: { id }, }: {
   return {
     title: '郑州瑞斯特耐有限公司',
     description: `${product!.name} | 郑州瑞斯特耐有限公司`,
-  }
+  };
 }
 
 export default function ProductPage({
@@ -81,6 +83,7 @@ export default function ProductPage({
             width='600'
             height='394'
             alt={product?.name || ''}
+            priority
           />
         </div>
 
@@ -89,7 +92,6 @@ export default function ProductPage({
             <Link
               href='/contact'
               className='mb-8 flex w-full items-center justify-center rounded-md bg-blue-500 px-4 py-2 font-semibold text-white shadow transition duration-150 ease-in-out hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-indigo-400'
-              scroll={true}
             >
               联系我们
             </Link>
