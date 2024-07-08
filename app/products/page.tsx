@@ -29,7 +29,7 @@ export default function Products() {
             </div>
             <div className='pt-4'>
               <h3 className='text-center text-base font-medium text-slate-700'>
-                <Link href={`/products/${item.id}`} scroll={false}>
+                <Link href={`/products/${item.id}`}>
                   <span aria-hidden='true' className='absolute inset-0'></span>
                   {item.name}
                 </Link>
