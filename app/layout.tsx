@@ -22,10 +22,8 @@ export const viewport: Viewport = {
 
 export default function RootLayout({
   children,
-  modal
 }: Readonly<{
   children: React.ReactNode;
-  modal: React.ReactNode;
 }>) {
   return (
     <html lang="en">
@@ -35,8 +33,6 @@ export default function RootLayout({
       <body className={inter.className}>
         <Header />
         {children}
-        {modal}
-        <div id="modal-root" />
         <Footer />
       </body>
     </html>
