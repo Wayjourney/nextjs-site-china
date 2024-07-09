@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { Fragment, useState, useRef, MouseEvent } from 'react';
-import { Dialog, Disclosure, Popover, Transition } from '@headlessui/react';
+import { Dialog, DialogPanel, Disclosure, Popover, PopoverButton, PopoverGroup, PopoverPanel, Transition } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import { ChevronDownIcon, EnvelopeIcon } from '@heroicons/react/20/solid';
 import ProductList from '@/lib/data';
@@ -105,7 +105,7 @@ export default function Example() {
             <Bars3Icon className='h-6 w-6' aria-hidden='true' />
           </button>
         </div>
-        <Popover.Group className='hidden lg:flex lg:h-full lg:items-center lg:gap-x-12'>
+        <PopoverGroup className='hidden lg:flex lg:h-full lg:items-center lg:gap-x-12'>
           <Link
             href='/'
             className='text-sm font-semibold leading-6 text-gray-900'
@@ -120,7 +120,7 @@ export default function Example() {
                 onMouseLeave={(e) => onHover(e, open, 'onMouseLeave')}
                 className='flex h-full flex-col'
               >
-                <Popover.Button
+                <PopoverButton
                   ref={buttonRef}
                   className='flex h-full items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900 outline-none'
                 >
@@ -129,7 +129,7 @@ export default function Example() {
                     className='h-5 w-5 flex-none text-gray-400'
                     aria-hidden='true'
                   />
-                </Popover.Button>
+                </PopoverButton>
 
                 <Transition
                   as={Fragment}
@@ -140,69 +140,74 @@ export default function Example() {
                   leaveFrom='opacity-100 translate-y-0'
                   leaveTo='opacity-0 translate-y-1'
                 >
-                  <Popover.Panel
+                  <PopoverPanel
                     focus={true}
                     className='absolute inset-x-0 top-full -z-10 bg-white shadow-lg ring-1 ring-gray-900/5'
                   >
-                    <div
-                      ref={panelRef}
-                      className='mx-auto grid max-w-screen-xl grid-cols-4 gap-x-4 px-6 py-10 lg:px-8 xl:gap-x-8'
-                    >
-                      {products.slice(0, 3).map((item) => (
+                    {({ close }) => (
+                      <>
                         <div
-                          key={item.name}
-                          className='group relative rounded-lg p-6 text-sm leading-6 hover:bg-gray-50'
+                          ref={panelRef}
+                          className='mx-auto grid max-w-screen-xl grid-cols-4 gap-x-4 px-6 py-10 lg:px-8 xl:gap-x-8'
                         >
-                          <figure>
-                            <Image
-                              className='h-11 w-auto rounded'
-                              src={item.img}
-                              width={600}
-                              height={394}
-                              alt={item.name}
-                              loading='lazy'
-                            />
-                          </figure>
-                          <Link
-                            href={item.href}
-                            className='mt-6 block font-semibold text-gray-900 outline-none'
-                            onClick={toggleMenu}
-                          >
-                            {item.name}
-                            <span className='absolute inset-0' />
-                          </Link>
-                          <p className='mt-1 text-gray-600'>
-                            {item.description}
-                          </p>
-                        </div>
-                      ))}
-                      <Link
-                        href='/products'
-                        className='flex items-center justify-center rounded-lg p-6 text-lg font-semibold leading-6 text-slate-500 hover:bg-gray-50 hover:text-slate-600'
-                      >
-                        更多产品{' >>'}
-                      </Link>
-                    </div>
-                    <div className='bg-gray-50'>
-                      <div className='mx-auto max-w-screen-xl'>
-                        <div className='grid grid-cols-1 divide-x divide-gray-900/5 border-x border-gray-900/5'>
-                          {callsToAction.map((item) => (
-                            <Link
+                          {products.slice(0, 3).map((item) => (
+                            <div
                               key={item.name}
-                              href={item.href}
-                              className='flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-100'
+                              className='group relative rounded-lg p-6 text-sm leading-6 hover:bg-gray-50'
                             >
-                              <item.icon
-                                className='h-5 w-5 flex-none text-gray-400'
-                                aria-hidden='true'
-                              />
-                              {item.name}
-                            </Link>
+                              <figure>
+                                <Image
+                                  className='h-11 w-auto rounded'
+                                  src={item.img}
+                                  width={600}
+                                  height={394}
+                                  alt={item.name}
+                                  loading='lazy'
+                                />
+                              </figure>
+                              <Link
+                                href={item.href}
+                                className='mt-6 block font-semibold text-gray-900 outline-none'
+                                onClick={toggleMenu}
+                              >
+                                {item.name}
+                                <span className='absolute inset-0' />
+                              </Link>
+                              <p className='mt-1 text-gray-600'>
+                                {item.description}
+                              </p>
+                            </div>
                           ))}
+                          <Link
+                            href='/products'
+                            className='flex items-center justify-center rounded-lg p-6 text-lg font-semibold leading-6 text-slate-500 hover:bg-gray-50 hover:text-slate-600'
+                            onClick={() => close()}
+                          >
+                            更多产品{' >>'}
+                          </Link>
                         </div>
-                      </div>
-                    </div>
-                  </Popover.Panel>
+                        <div className='bg-gray-50'>
+                          <div className='mx-auto max-w-screen-xl'>
+                            <div className='grid grid-cols-1 divide-x divide-gray-900/5 border-x border-gray-900/5'>
+                              {callsToAction.map((item) => (
+                                <Link
+                                  key={item.name}
+                                  href={item.href}
+                                  className='flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-100'
+                                >
+                                  <item.icon
+                                    className='h-5 w-5 flex-none text-gray-400'
+                                    aria-hidden='true'
+                                  />
+                                  {item.name}
+                                </Link>
+                              ))}
+                            </div>
+                          </div>
+                        </div>
+                      </>
+                    )}
+                  </PopoverPanel>
                 </Transition>
               </div>
             )}
@@ -229,7 +234,7 @@ export default function Example() {
           >
             关于我们
           </Link>
-        </Popover.Group>
+        </PopoverGroup>
       </nav>
       <Dialog
         as='div'
@@ -238,7 +243,7 @@ export default function Example() {
         onClose={setMobileMenuOpen}
       >
         <div className='fixed inset-0 z-10' />
-        <Dialog.Panel className='fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10'>
+        <DialogPanel className='fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10'>
           <div className='flex items-center justify-between'>
             <Link href='/' className='-m-1.5 p-1.5'>
               <span className='sr-only'>瑞斯特耐</span>
@@ -340,7 +345,7 @@ export default function Example() {
               </div>
             </div>
           </div>
-        </Dialog.Panel>
+        </DialogPanel>
       </Dialog>
     </header>
   );
