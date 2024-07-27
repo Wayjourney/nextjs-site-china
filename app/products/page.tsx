@@ -20,11 +20,11 @@ export default function Products() {
           >
             <div className='aspect-[3/2] overflow-hidden rounded-xl bg-gray-200'>
               <Image
-                src='/img/products/gerezhuan.jpg'
+                src={item.image || '/img/products/gerezhuan.jpg'}
                 width={600}
                 height={394}
                 alt={item.name}
-                className='h-full w-full object-cover object-center'
+                className='h-full object-fill object-center'
               />
             </div>
             <div className='pt-4'>

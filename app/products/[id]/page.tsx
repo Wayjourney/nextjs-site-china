@@ -38,7 +38,7 @@ export default function ProductPage({
         <div className='lg:col-span-7 lg:col-start-1 lg:row-span-3 lg:row-start-1 lg:mt-0'>
           <Image
             className='w-full rounded object-cover'
-            src='/img/products/gerezhuan.jpg'
+            src={product?.image || '/img/products/gerezhuan.jpg'}
             width='600'
             height='394'
             alt={product?.name || ''}
@@ -57,10 +57,10 @@ export default function ProductPage({
           </div>
           <div className='border-t border-gray-100 pt-8'>
             <h2 className='text-xl font-semibold leading-none text-gray-900'>
-              产品信息
+              产品介绍
             </h2>
             {product && (
-              <div className='mt-4 text-base text-gray-500'>
+              <div className='mt-4 text-base text-gray-500 space-y-4'>
                 {product.description.map((item, index) => (
                   <p key={index}>{item}</p>
                 ))}
