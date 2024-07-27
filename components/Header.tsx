@@ -3,7 +3,16 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { Fragment, useState, useRef, MouseEvent } from 'react';
-import { Dialog, DialogPanel, Disclosure, Popover, PopoverButton, PopoverGroup, PopoverPanel, Transition } from '@headlessui/react';
+import {
+  Dialog,
+  DialogPanel,
+  Disclosure,
+  Popover,
+  PopoverButton,
+  PopoverGroup,
+  PopoverPanel,
+  Transition,
+} from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import { ChevronDownIcon, EnvelopeIcon } from '@heroicons/react/20/solid';
 import ProductList from '@/lib/data';
@@ -83,9 +92,17 @@ export default function Example() {
         aria-label='Global'
       >
         <div className='flex lg:flex-1'>
-          <Link href='/' className='-m-1.5 p-1.5'>
-            <span className='sr-only'>瑞斯特耐</span>
+          <Link
+            href='/'
+            className='-m-1.5 p-1.5'
+            itemScope
+            itemType='http://schema.org/Brand'
+          >
+            <span className='sr-only' itemProp='name'>
+              瑞斯特耐
+            </span>
             <Image
+              itemProp='logo'
               className='h-8 w-auto outline-none'
               src='/img/logo.png'
               width='389'
