@@ -11,7 +11,7 @@ export async function generateMetadata({
   const product = ProductList.find((item) => item.id === Number(id));
 
   return {
-    title: '郑州瑞斯特耐有限公司',
+    title: '郑州瑞斯特耐有限公司官网',
     description: `${product!.name} | 郑州瑞斯特耐有限公司`,
   };
 }
